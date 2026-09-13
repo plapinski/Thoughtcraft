@@ -1,0 +1,54 @@
+name: validate
+
+# A branch with an open PR fires both events, so a bare `push:` plus
+# `pull_request:` runs every job twice. Push covers main — where there is no PR
+# to check — and pull_request covers everything on its way there.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  claude-manifests:
+    name: Claude Code manifest schema
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - run: npm install -g @anthropic-ai/claude-code
+
+      - name: Manifest shape (claude plugin validate --strict)
+        run: |
+          claude plugin validate . --strict
+          for plugin in plugins/*; do
+            claude plugin validate "$plugin" --strict
+          done
+
+  shared-checks:
+    name: shared packaging and plugin tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Claude and Codex packaging, skill metadata, bundled resources
+        run: python3 scripts/validate_marketplace.py
+
+      - name: Marketplace validator regressions and portable execution
+        run: python3 scripts/test_validate_marketplace.py
+
+      # One step per bundled renderer. A plugin ships its tests next to the
+      # code they cover, so a new plugin with code needs a step here too.
+      - name: explain — diagram renderer
+        run: python3 test_diagrams.py
+        working-directory: plugins/explain/skills/visually/scripts

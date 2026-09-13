@@ -1,0 +1,27 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "thoughtcraft",
+  "owner": {
+    "name": "Paweł Łapiński",
+    "email": "kontakt@pawellapinski.pl",
+    "url": "https://github.com/plapinski"
+  },
+  "description": "Skills for explaining ideas with plain language and diagrams.",
+  "plugins": [
+    {
+      "name": "explain",
+      "source": "./plugins/explain",
+      "description": "Explain processes, systems, and ideas with plain language and diagrams. Choose technical detail, a narrative for non-specialists, or both.",
+      "category": "productivity",
+      "keywords": [
+        "explanation",
+        "ascii-diagrams",
+        "plain-language",
+        "thinking",
+        "communication",
+        "visualization"
+      ],
+      "license": "MIT"
+    }
+  ]
+}

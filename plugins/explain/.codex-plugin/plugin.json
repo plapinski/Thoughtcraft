@@ -1,0 +1,36 @@
+{
+  "name": "explain",
+  "version": "0.4.0",
+  "description": "Explain processes, systems, and ideas with plain language and diagrams. Choose technical detail, a narrative for non-specialists, or both.",
+  "author": {
+    "name": "Paweł Łapiński",
+    "email": "kontakt@pawellapinski.pl",
+    "url": "https://github.com/plapinski"
+  },
+  "homepage": "https://github.com/plapinski/Thoughtcraft",
+  "repository": "https://github.com/plapinski/Thoughtcraft",
+  "license": "MIT",
+  "keywords": [
+    "explanation",
+    "ascii-diagrams",
+    "plain-language",
+    "thinking",
+    "communication",
+    "visualization"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Explain",
+    "shortDescription": "Plain language and rendered ASCII diagrams.",
+    "longDescription": "Explain processes, systems, and ideas with plain language and diagrams. Choose technical detail, a narrative for non-specialists, or both.",
+    "developerName": "Paweł Łapiński",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive"
+    ],
+    "websiteURL": "https://github.com/plapinski/Thoughtcraft",
+    "defaultPrompt": [
+      "Explain how this works with a diagram."
+    ]
+  }
+}

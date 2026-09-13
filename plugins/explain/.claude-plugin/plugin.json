@@ -1,0 +1,22 @@
+{
+  "name": "explain",
+  "displayName": "Explain",
+  "version": "0.4.0",
+  "description": "Explain processes, systems, and ideas with plain language and diagrams. Choose technical detail, a narrative for non-specialists, or both.",
+  "author": {
+    "name": "Paweł Łapiński",
+    "email": "kontakt@pawellapinski.pl",
+    "url": "https://github.com/plapinski"
+  },
+  "homepage": "https://github.com/plapinski/Thoughtcraft",
+  "repository": "https://github.com/plapinski/Thoughtcraft",
+  "license": "MIT",
+  "keywords": [
+    "explanation",
+    "ascii-diagrams",
+    "plain-language",
+    "thinking",
+    "communication",
+    "visualization"
+  ]
+}
